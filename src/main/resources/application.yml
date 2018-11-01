@@ -1,0 +1,16 @@
+server:
+  port: 8081
+  context-path: /
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.jl.cross.dao
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123654
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
