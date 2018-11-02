@@ -3,6 +3,13 @@ package com.jl.cross.util;
 import java.security.MessageDigest;
 
 public class MD5Util {
+
+    public static void main(String[] args) {
+        String a = "110";
+        System.out.println(encodeByMD5(a));
+
+    }
+
     /** 十六进制下数字到字符的映射数组 */
     private final static String[] hexDigits = { "0", "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
@@ -17,6 +24,7 @@ public class MD5Util {
             try {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 byte[] results = md.digest(originString .getBytes());
+                System.out.println(results);
                 String resultString = byteArrayToHexString(results);
                 return resultString.toUpperCase();
             } catch (Exception ex) {
@@ -35,8 +43,10 @@ public class MD5Util {
     private static String byteArrayToHexString(byte[] b) {
         StringBuffer resultSb = new StringBuffer();
         for (int i = 0; i < b.length; i++) {
+            System.out.println(b[i]);
             resultSb.append(byteToHexString(b[i]));
         }
+        System.out.println(resultSb.toString());
         return resultSb.toString();
     }
 
